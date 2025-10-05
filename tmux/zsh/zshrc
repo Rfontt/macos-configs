@@ -1,0 +1,23 @@
+# Path to Oh My Zsh 
+export ZSH="$HOME/.oh-my-zsh"
+
+# Theme
+ZSH_THEME="robbyrussell"
+
+# Plugins 
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+
+# Enable autocompletion 
+autoload -Uz compinit
+compinit
+
+# Case-insensitive completion
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+
+# Load Oh My Zsh
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
+
+export LANG=en_US.UTF-8
+export EDITOR="nvim"
