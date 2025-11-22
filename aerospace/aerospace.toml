@@ -18,12 +18,20 @@ if.app-name-regex-substring = 'finder'
 run = 'layout floating'
 
 [[on-window-detected]]
+if.app-name-regex-substring = 'GoLand'
+run = ['layout floating', 'move-node-to-workspace 1']
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'Code'
+run = ['layout floating', 'move-node-to-workspace 1']
+
+[[on-window-detected]]
 if.app-name-regex-substring = 'brave'
-run = ['layout floating', 'move-node-to-workspace 3']
+run = ['layout floating', 'move-node-to-workspace 2']
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'alacritty'
-run = ['move-node-to-workspace 4']
+run = ['move-node-to-workspace 3']
 
 [key-mapping]
     preset = 'qwerty'
