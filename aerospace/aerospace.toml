@@ -46,21 +46,26 @@ run = ['move-node-to-workspace 3']
     outer.top =        6
     outer.right =      6
 
+[exec.env-vars]
+    MACINTOSH_APPS_DIR = "/Users/ritadecassiafontenele/Applications"
+    APPS_DIR = "/Applications"
+
 [mode.main.binding]
     alt-shift-backspace = ['close']
 
     # tools
-    alt-ctrl-shift-t = 'exec-and-forget open -n "/Applications/Alacritty.app"'
-    alt-shift-t      = 'exec-and-forget open "/Applications/Alacritty.app"'
+    alt-ctrl-shift-t = 'exec-and-forget open -n "$APPS_DIR/Alacritty.app"'
+    alt-shift-t      = 'exec-and-forget open "$APPS_DIR/Alacritty.app"'
 
     # browsers
-    alt-shift-b = 'exec-and-forget open "/Applications/Brave Browser.app"'
+    alt-shift-b = 'exec-and-forget open "$APPS_DIR/Brave Browser.app"'
 
     # IDEAs
-    alt-shift-g = 'exec-and-forget open "/Users/ritadecassiafontenele/Applications/GoLand.app"'
-    alt-shift-i = 'exec-and-forget open "/Users/ritadecassiafontenele/Applications/IntelliJ IDEA Ultimate.app"'
-    alt-shift-v = 'exec-and-forget open "/Applications/Visual Studio Code.app"'
-
+    alt-shift-g = 'exec-and-forget open "$MACINTOSH_APPS_DIR/GoLand.app"'
+    alt-shift-i = 'exec-and-forget open "$MACINTOSH_APPS_DIR/IntelliJ IDEA Ultimate.app"'
+    alt-shift-v = 'exec-and-forget open "$APPS_DIR/Visual Studio Code.app"'
+    alt-shift-n = 'exec-and-forget open "$APPS_DIR/Obsidian.app"'
+    
     # See: https://nikitabobko.github.io/AeroSpace/commands#layout
     alt-slash = 'layout tiles horizontal vertical'
     alt-comma = 'layout accordion horizontal vertical'
@@ -104,10 +109,15 @@ run = ['move-node-to-workspace 3']
     # See: https://nikitabobko.github.io/AeroSpace/commands#mode
     ctrl-shift-m = 'mode main'
     ctrl-shift-s = 'mode service'
+    ctrl-shift-c = 'mode config'
     alt-ctrl-f = 'layout floating tiling'
 
+# open configs
+[mode.config.binding]
+    esc = ['reload-config', 'mode main']
+    a = 'exec-and-forget open -a "$APPS_DIR/Visual Studio Code.app" "/Users/ritadecassiafontenele/.config/aerospace/aerospace.toml"'
+    
 # 'service' binding mode declaration.
-# See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.service.binding]
     esc = ['reload-config', 'mode main']
     r = ['flatten-workspace-tree', 'mode main'] # reset layout
